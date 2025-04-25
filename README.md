@@ -8,7 +8,6 @@ A modern, responsive portfolio website showcasing professional services, skills,
 - Dynamic statistics counter on scroll
 - Services section with professional layout
 - Interactive portfolio gallery
-- Client testimonials
 - Contact form
 - Social media integration
 
