@@ -83,4 +83,61 @@ document.addEventListener('DOMContentLoaded', function() {
     animateOnScroll();
 
     window.addEventListener('scroll', animateOnScroll);
+
+    const counters = document.querySelectorAll('.counter');
+    let hasAnimated = {};
+
+    function animateCounter(counter) {
+        const target = +counter.getAttribute('data-target');
+        const duration = 2000; // Animation duration in milliseconds
+        const startTime = performance.now();
+        const startValue = 0;
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Easing function for smooth animation
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentValue = Math.floor(startValue + (target - startValue) * easeOut);
+
+            counter.textContent = currentValue;
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    // Create Intersection Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Get the counter's unique identifier
+            const counterId = entry.target.getAttribute('data-target');
+            
+            if (entry.isIntersecting && !hasAnimated[counterId]) {
+                animateCounter(entry.target);
+                hasAnimated[counterId] = true;
+                
+                // Reset animation when element is out of view
+                setTimeout(() => {
+                    hasAnimated[counterId] = false;
+                    entry.target.textContent = '0';
+                }, 1000);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all counters
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
 });
