@@ -4,8 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.getElementById('nav-links');
     const dropdowns = document.querySelectorAll('.dropdown');
 
-    mobileMenu.addEventListener('click', () => {
+    // Enhanced Mobile Menu Toggle
+    mobileMenu.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event bubbling
         navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('active'); // Toggle menu icon state if needed
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-links') && !e.target.closest('#mobile-menu')) {
+            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+    });
+
+    // Close dropdown when screen size changes
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+        }
     });
 
     // Dropdown Menu Toggle for Mobile
