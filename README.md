@@ -1,4 +1,4 @@
-# Web Dev Portfolio Website
+# Web Dev Assignment Portfolio Website
 
 A modern, responsive portfolio website showcasing professional services, skills, and achievements with interactive elements.
 
