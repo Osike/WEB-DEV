@@ -222,6 +222,11 @@ nav {
 .hero-content {
     position: relative;
     z-index: 2;
+   
+}
+/* Changing the color of the paragraph home page */
+.hero-content p {
+    color: #ffffff; /* White color */
 }
 
 .hero h1 span {
@@ -231,8 +236,10 @@ nav {
 .hero-btns {
     display: flex;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: auto; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
     color: var(--primary-dark);
+    margin-bottom: auto; /* Pushes the buttons to the bottom of the hero section */
 }
 .hero-btns .btn {
     display: inline-block;
@@ -247,21 +254,21 @@ nav {
 }
 
 .hero-btns .btn-primary {
-    background-color: var(--accent-color); /* Solid blue */
+    background-color: var(--accent-color); 
     color: #fff; /* White text */
 }
 
 .hero-btns .btn-primary:hover {
-    background-color: #08825c; /* Darker blue on hover */
+    background-color: #08825c; 
 }
 
 .hero-btns .btn-secondary {
-    background-color:var(--accent-color) ;/* Solid gray */
+    background-color:var(--accent-color) ;
     color: #fff; /* White text */
 }
 
 .hero-btns .btn-secondary:hover {
-    background-color:#08825c; /* Darker gray on hover */
+    background-color:#08825c; 
 }
 
 /* About Section */
