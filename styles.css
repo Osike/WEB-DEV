@@ -468,15 +468,23 @@ nav {
     transform: translateX(5px);
 }
 /* portofolio section */
+.portfolio .h2{
+    background-color: var(--bg-light);
+   
+}
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    max-width: 900px; /* Limit the total width */
+    margin: 0 auto; /* Center the grid container */
+    justify-content: center; /* Center the whole grid */
     padding: 20px 0;
   }
   
   .portfolio-item img {
-    width: 100%;
+    width: 100%; /* Make each image responsive inside its container */
+    max-width: 250px; /* Shrink individual images */
     height: auto;
     display: block;
     border-radius: 8px;
@@ -728,7 +736,7 @@ nav {
     padding: 20px ;
     font-size: 18px;
     font-weight: bold;
-   margin: auto;
+   
     margin-bottom: auto;
     
   }
