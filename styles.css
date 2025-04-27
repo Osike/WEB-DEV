@@ -481,16 +481,6 @@ nav {
     display: block;
     border-radius: 8px;
   }
-  .portfolio-footer {
-    background-color: #222; /* Bold dark color */
-    color: #00715D;
-    text-align: center;
-    padding: 20px ;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 40px;
-    border-radius: 8px; /* Optional: slightly rounded corners */
-  }
   
   
 
@@ -730,6 +720,19 @@ nav {
     font-size: 1rem;
     color: #666;
 }
+/* footer */
+.footer {
+    background-color: #00715D; /* green */
+    color: white;
+    text-align: center;
+    padding: 20px ;
+    font-size: 18px;
+    font-weight: bold;
+   margin: auto;
+    margin-bottom: auto;
+    
+  }
+  
 
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 768px) {
