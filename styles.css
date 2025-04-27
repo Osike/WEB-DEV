@@ -224,7 +224,7 @@ nav {
     z-index: 2;
    
 }
-/* Changing the color of the paragraph home page */
+/* Changing the color of the paragraph kwa home page */
 .hero-content p {
     color: #ffffff; /* White color */
 }
@@ -443,7 +443,7 @@ nav {
 }
 
 .story-img {
-    height: 250px;
+    height: 150px;
     overflow: hidden;
 }
 
