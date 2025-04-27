@@ -4,6 +4,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.getElementById('nav-links');
     const dropdowns = document.querySelectorAll('.dropdown');
 
+    const modeToggle = document.querySelector('.mode-toggle');
+    const body = document.body;
+  
+    modeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+  
+      // Change the icon for the theme toggle
+      const icon = modeToggle.querySelector('i');
+      if (body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    });
+
     // Enhanced Mobile Menu Toggle
     mobileMenu.addEventListener('click', (e) => {
         e.stopPropagation(); // Prevent event bubbling
