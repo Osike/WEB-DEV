@@ -481,6 +481,17 @@ nav {
     display: block;
     border-radius: 8px;
   }
+  .portfolio-footer {
+    background-color: #222; /* Bold dark color */
+    color: #00715D;
+    text-align: center;
+    padding: 20px ;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 40px;
+    border-radius: 8px; /* Optional: slightly rounded corners */
+  }
+  
   
 
 /* Skills Section */
